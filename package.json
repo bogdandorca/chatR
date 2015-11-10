@@ -1,0 +1,52 @@
+{
+  "name": "chatR",
+  "version": "0.0.0",
+  "description": "Chat application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "bogdandorca@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "*",
+    "chalk": "*",
+    "express": "*",
+    "jade": "*",
+    "moment": "^2.10.6",
+    "mongoose": "^4.1.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean": "*",
+    "gulp-concat": "*",
+    "gulp-if": "*",
+    "gulp-inject": "*",
+    "gulp-jshint": "*",
+    "gulp-livereload": "*",
+    "gulp-minify-css": "*",
+    "gulp-nodemon": "*",
+    "gulp-notify": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-strip-debug": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-watch": "*",
+    "gulp-run-sequence": "*",
+    "jasmine-core": "*",
+    "karma": "*",
+    "karma-jasmine": "*",
+    "karma-phantomjs-launcher": "*",
+    "main-bower-files": "*",
+    "open": "*",
+    "phantomjs": "*",
+    "tiny-lr": "*",
+    "vhost": "*",
+    "yargs": "*"
+  }
+}

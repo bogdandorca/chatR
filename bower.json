@@ -1,0 +1,26 @@
+{
+  "name": "chatR",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "bogdandorca@gmail.com"
+  ],
+  "description": "Chat application",
+  "main": "",
+  "moduleType": [],
+  "license": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-route": "~1.4.5",
+    "fontawesome": "~4.4.0",
+    "moment": "~2.10.6"
+  }
+}
