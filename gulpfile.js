@@ -6,22 +6,20 @@ var gulp = require('gulp'),
     runSequence = require('gulp-run-sequence');
 
 // Personal modules
-var config = require('./config.js').development,
-    clientScripts = require('./gulp_tasks/clientScripts.js'),
+var clientScripts = require('./gulp_tasks/clientScripts.js'),
     lint = require('./gulp_tasks/lint.js'),
     specs = require('./gulp_tasks/specs.js'),
     styles = require('./gulp_tasks/styles.js'),
     server = require('./gulp_tasks/server.js'),
     injector = require('./gulp_tasks/injector.js'),
-    clean = require('./gulp_tasks/clean.js'),
-    open = require('open');
+    clean = require('./gulp_tasks/clean.js');
 
 // The environment is determined by the '--production' flag
 var environment;
 argv.production ? environment = 'production' : environment = 'development';
 
 gulp.task('default', function(){
-    runSequence('clean', ['lint', 'clientScripts', 'styles'], 'build', 'server', 'open');
+    runSequence('clean', ['lint', 'clientScripts', 'styles'], 'build', 'server');
     /*  Flags:
      none: Task automation for development (JSLinter, JSConcat, Sass, CSS-Prefixer), starts the server and livereload
      --production: Adds to the default suite: JS Uglify, JS Strip Debug, CSS Minify
@@ -41,9 +39,6 @@ gulp.task('default', function(){
 
 // Server
 gulp.task('server', server);
-gulp.task('open', function(){
-    if(argv.browse) open('http://localhost:'+config.port);
-});
 // Clean
 gulp.task('clean', clean);
 // Scripts
