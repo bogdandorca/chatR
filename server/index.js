@@ -26,6 +26,7 @@ require('./config/authEngine')(app);
 * Views
 **/
 require('./views/auth.view')(app);
+require('./views/user.view')(app);
 require('./views/public.view')(app);
 
 /**

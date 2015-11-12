@@ -22,7 +22,9 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.0.0",
     "passport-google": "^0.3.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "response-api": "^1.0.2",
+    "validator": "^4.2.1"
   },
   "devDependencies": {
     "gulp": "*",

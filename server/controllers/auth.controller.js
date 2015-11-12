@@ -1,4 +1,5 @@
 var passport = require('passport'),
+    responseApi = require('response-api'),
 	LocalStrategy = require('passport-local').Strategy,
 	User = require('../models/user.model');
 
@@ -29,7 +30,7 @@ module.exports = {
 	/**
 	* Local Strategy
 	**/
-	initiLocalStrategy: function(){
+	initLocalStrategy: function(){
 		// Get the user's details from the 'login' request
 		// And check if the user with the provided credentials does exist
 		passport.use(new LocalStrategy.Strategy(
@@ -44,6 +45,7 @@ module.exports = {
 	                if(!user) {
 	                    done(null, null);
 	                } else if(!user.hasValidPassword(password)){
+                        console.log('asd');
 	                    done(null, null);
 	                } else {
 	                    done(null, user);
@@ -54,5 +56,12 @@ module.exports = {
 
 	    this.serializeUser();
 	    this.deserializeUser();
+	},
+	isAuthorized: function(req, res, next){
+		if(req.isAuthenticated()){
+			next();
+		} else {
+			res.send(responseApi.error('Not authorized', 401, req.user));
+		}
 	}
 };
