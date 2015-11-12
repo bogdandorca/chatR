@@ -1,0 +1,7 @@
+.navbar.navbar-inverse.navbar-fixed-top(ng-controller="HeaderCtrl")
+    .container-fluid
+        .navbar-header
+            a(href="/").navbar-brand chatR
+        ul.nav.navbar-nav.navbar-right
+            li(ng-click="logOut()", ng-if="displayUserElement")
+                a(href="#") Log Out
