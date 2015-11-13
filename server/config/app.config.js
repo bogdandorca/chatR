@@ -7,7 +7,7 @@ module.exports = {
         database: 'mongodb://localhost/chatR'
     },
     production: {
-        port: 5676,
-        database: 'mongodb://localhost/chatR'
+        port: 80,
+        database: ' mongodb://chatrClient:chatrPass@ds053964.mongolab.com:53964/chatr'
     }
 };

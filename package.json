@@ -2,10 +2,22 @@
   "name": "chatR",
   "version": "0.0.0",
   "description": "Chat application",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "4.0.x",
+    "npm": "2.14.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bogdandorca/chatR.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bogdandorca/chatR/issues"
+  },
+  "homepage": "https://github.com/bogdandorca/chatR",
   "keywords": [],
   "author": "bogdandorca@gmail.com",
   "license": "MIT",
