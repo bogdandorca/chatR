@@ -1,8 +1,8 @@
-angular.module('app').controller('HeaderCtrl', function($scope, $location, UserService){
+angular.module('app').controller('HeaderCtrl', function($scope, $location, AuthService){
     $scope.displayUserElement = false;
 
     $scope.logOut = function(){
-        UserService.logout().then(function(){
+        AuthService.logout().then(function(){
             $scope.displayUserElement = false;
             $location.path('/login');
         }, function(){
@@ -11,8 +11,8 @@ angular.module('app').controller('HeaderCtrl', function($scope, $location, UserS
     };
 
     // When the User logs in, add the required elements
-    UserService.registerObserverCallback(function(){
-        if(UserService.user){
+    AuthService.registerObserverCallback(function(){
+        if(AuthService.user){
             $scope.displayUserElement = true;
         }
     });

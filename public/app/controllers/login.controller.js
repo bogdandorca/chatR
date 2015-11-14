@@ -1,4 +1,4 @@
-angular.module('app').controller('LoginCtrl', function($scope, $location, UserService){
+angular.module('app').controller('LoginCtrl', function($scope, $location, AuthService){
     $scope.credentials = {
         username: null,
         password: null
@@ -6,7 +6,7 @@ angular.module('app').controller('LoginCtrl', function($scope, $location, UserSe
     $scope.error = null;
 
     $scope.login = function(){
-        UserService.login($scope.credentials)
+        AuthService.login($scope.credentials)
             .then(function(response){
                 $scope.error = null;
                 $location.path('/');

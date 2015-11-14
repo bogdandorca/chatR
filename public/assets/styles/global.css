@@ -1,8 +1,50 @@
+@impoty "src/_typography.scss";
+html {
+  font-size: 14px; }
+
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif; }
+
 .content-body {
   margin-top: 50px; }
 
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 5rem;
+  font-weight: normal; }
+
+label {
+  font-weight: normal; }
+
+input {
+  font-family: Roboto, Helvetica, Arial, sans-serif; }
+
 .navbar-fixed-top {
   z-index: 49; }
+
+body {
+  background-color: #3896f4; }
+
+.public-form-wrapper {
+  width: 40%;
+  margin: 10% auto 0 auto;
+  padding: 50px 60px;
+  background-color: #fff;
+  border-radius: 5px; }
+  .public-form-wrapper h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10%; }
+  .public-form-wrapper .btn {
+    width: 100%;
+    margin-top: 10px; }
+  .public-form-wrapper .additional {
+    text-align: center;
+    margin-top: 50px; }
+    .public-form-wrapper .additional a {
+      font-weight: bold;
+      color: #3896f4; }
 
 .loading-screen {
   position: absolute;
@@ -12,3 +54,10 @@
   left: 0;
   top: 0;
   z-index: 50; }
+
+input.ng-dirty.ng-invalid {
+  border-color: #E65633;
+  background-color: #FEEBE5; }
+
+label.invalid {
+  color: #E65633; }

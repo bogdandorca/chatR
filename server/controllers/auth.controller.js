@@ -1,6 +1,7 @@
 var passport = require('passport'),
     responseApi = require('response-api'),
 	LocalStrategy = require('passport-local').Strategy,
+	FacebookStrategy = require('passport-facebook').Strategy,
 	User = require('../models/user.model');
 
 module.exports = {
@@ -56,6 +57,21 @@ module.exports = {
 
 	    this.serializeUser();
 	    this.deserializeUser();
+	},
+	initFacebookStrategy: function(){
+		passport.use(new FacebookStrategy({
+			clientID: '1177613452253038',
+			clientSecret: '9a3f6bc663b2d77db573e9b78b08ca42',
+			callbackURL: "http://localhost:5676/auth/facebook/callback",
+			enableProof: false
+		},
+		function(accessToken, refreshToken, profile, done){
+            console.log(profile);
+            return done(null, profile);
+			//User.findOrCreate({ facebookId: profile.id }, function(err, user){
+			//	return done(err, user);
+			//});
+		}));
 	},
 	isAuthorized: function(req, res, next){
 		if(req.isAuthenticated()){

@@ -1,0 +1,26 @@
+.public-form-wrapper
+    h1 Register
+    form(name="registerForm" novalidate)
+        .form-group
+            label(for="register-first-name", ng-class="{'invalid': (registerForm.registerFirstName.$error.required && registerForm.registerFirstName.$touched)}") First Name
+            input(type="text", id="register-first-name", name="registerFirstName", ng-model="user.firstName", placeholder="First Name", required).form-control
+        .form-group
+            label(for="register-last-name", ng-class="{'invalid': (registerForm.registerLastName.$error.required && registerForm.registerLastName.$touched)}") Last Name
+            input(type="text", id="register-last-name", name="registerLastName", ng-model="user.lastName", placeholder="Last Name", required).form-control
+        .form-group
+            label(for="register-email", ng-class="{'invalid': ((registerForm.registerEmail.$error.required && registerForm.registerEmail.$touched) || registerForm.registerEmail.$error.email)}") Email
+            input(type="email", id="register-email", name="registerEmail", ng-model="user.email", placeholder="Email", required).form-control
+        .form-group
+            label(for="register-email-confirmation", ng-class="{'invalid': ((registerForm.registerEmailConfirmation.$error.required && registerForm.registerEmailConfirmation.$touched) || registerForm.registerEmailConfirmation.$error.email)}") Email Confirmation
+            input(type="email", id="register-email-confirmation", name="registerEmailConfirmation", ng-model="emailConfirmation", placeholder="Email Confirmation", required).form-control
+        .form-group
+            label(for="register-password", ng-class="{'invalid': (registerForm.registerPassword.$error.required && registerForm.registerPassword.$touched)}") Password
+            input(type="password", id="register-password", name="registerPassword", ng-model="user.password", placeholder="Password", required).form-control
+        .form-group
+            label(for="register-password-confirmation", ng-class="{'invalid': (registerForm.registerPasswordConfirmation.$error.required && registerForm.registerPasswordConfirmation.$touched)}") Password Confirmation
+            input(type="password", id="register-password-confirmation", name="registerPasswordConfirmation", ng-model="passwordConfirmation", placeholder="Password Confirmation", required).form-control
+        .form-group
+            button(type="button", ng-click="register()").btn.btn-primary Register
+        .form-group.additional
+            p Already have an account?&nbsp;
+                a(href="/login") Log in!

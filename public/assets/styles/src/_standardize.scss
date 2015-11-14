@@ -1,3 +1,25 @@
+html {
+  font-size: $base-font-size;
+}
+body {
+  font-family: $default-font;
+}
 .content-body {
   margin-top: 50px;
+}
+
+// Paragraph
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: $heading-font-size;
+  font-weight: normal;
+}
+
+// Input
+label {
+  font-weight: normal;
+}
+input {
+  font-family: $default-font;
 }

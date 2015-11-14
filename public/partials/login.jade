@@ -1,11 +1,16 @@
-form
-    .form-group
-        .alert.alert-danger(ng-if="error") {{error}}
-    .form-group
-        label(for="login-email") Email
-        input(type="text", id="login-email", ng-model="credentials.username", placeholder="Email").form-control
-    .form-group
-        label(for="login-password") Password
-        input(type="password", id="login-password", ng-model="credentials.password", placeholder="Email").form-control
-    .form-group
-        button(type="button", ng-click="login()").btn.btn-primary Login
+.public-form-wrapper
+    h1 Login
+    form
+        .form-group
+            .alert.alert-danger(ng-if="error") {{error}}
+        .form-group
+            label(for="login-email") Email
+            input(type="text", id="login-email", name="loginEmail", ng-model="credentials.username", placeholder="Email", required).form-control
+        .form-group
+            label(for="login-password") Password
+            input(type="password", id="login-password", name="loginPassword", ng-model="credentials.password", placeholder="Email", required).form-control
+        .form-group
+            button(type="button", ng-click="login()").btn.btn-primary Login
+        .form-group.additional
+            p Don't have an account?&nbsp;
+                a(href="/register") Sign up!

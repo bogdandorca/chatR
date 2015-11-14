@@ -4,6 +4,10 @@ angular.module('app', ['ngRoute']).config(function($routeProvider, $locationProv
             templateUrl: './partials/login',
             controller: 'LoginCtrl'
         })
+        .when('/register', {
+            templateUrl: './partials/register',
+            controller: 'RegisterCtrl'
+        })
         .when('/', {
             templateUrl: './partials/home',
             controller: 'HomeCtrl'
@@ -13,17 +17,17 @@ angular.module('app', ['ngRoute']).config(function($routeProvider, $locationProv
         });
     $locationProvider.html5Mode(true);
 });
-angular.module('app').run(function($rootScope, $location, UserService){
-    var publicPages = ['/login'];
-    UserService.initialize().then(function(){
-        if(UserService.user && $location.path().indexOf(publicPages) >= 0){
+angular.module('app').run(function($rootScope, $location, AuthService){
+    var publicPages = ['/login', '/register'];
+    AuthService.initialize().then(function(){
+        if(AuthService.user && publicPages.indexOf($location.path()) >= 0){
             $location.path('/');
         }
     });
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-        if(UserService.user && next.$$route.originalPath.indexOf(publicPages) >= 0){
+        if(AuthService.user && publicPages.indexOf(next.$$route.originalPath) >= 0){
             $location.path('/');
-        } else if(!UserService.user && next.$$route.originalPath.indexOf(publicPages) < 0){
+        } else if(!AuthService.user && publicPages.indexOf(next.$$route.originalPath) < 0){
             $location.path('/login');
         }
     });

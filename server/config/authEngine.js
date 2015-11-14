@@ -6,4 +6,5 @@ module.exports = function(app){
     app.use(passport.session());
 
     UserController.initLocalStrategy();
+    UserController.initFacebookStrategy();
 };

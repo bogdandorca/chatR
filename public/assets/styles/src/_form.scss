@@ -1,0 +1,13 @@
+input {
+  &.ng-dirty {
+    &.ng-invalid {
+      border-color: $danger-border-color;
+      background-color: $danger-background-color;
+    }
+  }
+}
+label {
+  &.invalid {
+    color: $danger-border-color;
+  }
+}

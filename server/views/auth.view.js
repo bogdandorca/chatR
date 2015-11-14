@@ -9,6 +9,15 @@ module.exports = function(app){
 		.post(passport.authenticate('local'), function(req, res){
 	    	res.send(responseApi.success('Logged In', req.user.getProfile(), req.user));
 	    });
+	Router.route('/facebook')
+        .get(passport.authenticate('facebook'));
+    Router.route('/facebook/callback')
+        .get(
+            passport.authenticate('facebook'),
+            function(req, res){
+                res.send('Success');
+            }
+        );
 	 Router.route('/logout')
 		 .get(function(req, res){
 	    	req.logout();
