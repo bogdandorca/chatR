@@ -1,1 +1,8 @@
-h1 {{message}}
+.chat-window
+    h2.chat-title {{message}}
+include userList
+.chat-input
+    .input-group
+        input(type="text", placeholder="Enter a message").form-control
+        span.input-group-btn
+            button(type="button").btn.btn-default Send

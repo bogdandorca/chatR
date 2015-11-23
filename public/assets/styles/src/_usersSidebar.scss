@@ -1,0 +1,32 @@
+.users-sidebar {
+  width: $users-sidebar-width;
+  height: calc(100% - #{$header-height} - #{$chat-input-height});
+  display: inline-block;
+  background-color: $light-color;
+  vertical-align: top;
+  border-left: 1px solid;
+  border-color: $border-color-compilation;
+  .online-users-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .online-user {
+      padding: 7px 15px;
+      cursor: pointer;
+      transition: background .2s ease-in;
+      &:hover {
+        background-color: $medium-light-color;
+      }
+      .status-indicator {
+        float: right;
+        vertical-align: middle;
+      }
+      .online-indicator {
+        color: $main-color;
+      }
+      .offline-indicator {
+        color: $medium-light-color;
+      }
+    }
+  }
+}

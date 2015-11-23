@@ -42,7 +42,7 @@ module.exports = {
 	            function(err, user) {
 	                if(err) { done(err, null); }
 
-	                // If the request was successfull
+	                // If the request was successful
 	                if(!user) {
 	                    done(null, null);
 	                } else if(!user.hasValidPassword(password)){
@@ -67,7 +67,13 @@ module.exports = {
 		},
 		function(accessToken, refreshToken, profile, done){
             console.log(profile);
-            return done(null, profile);
+			var user = new User({
+				firstName: profile.givenName,
+				lastName: profile.familyName,
+				email: profile.email | this.firstName + this.lastName + "@facebook.com",
+				password: "asd"
+			});
+            return done(null, user);
 			//User.findOrCreate({ facebookId: profile.id }, function(err, user){
 			//	return done(err, user);
 			//});

@@ -7,6 +7,8 @@ var express = require('express'),
 * Config
 **/
 var app = express(),
+    http = require('http').Server(app),
+    io = require('socket.io')(http),
     config = require('./config/app.config')[env];
 
 /**
@@ -20,11 +22,12 @@ mongoose.connect(config.database, function(){
 * Engine config
 **/
 require('./config/viewEngine')(app);
-require('./config/authEngine')(app);
+require('./config/authEngine')(app, io);
 
 /**
 * Views
 **/
+require('./views/socket.view')(io);
 require('./views/auth.view')(app);
 require('./views/user.view')(app);
 require('./views/public.view')(app);
@@ -32,6 +35,6 @@ require('./views/public.view')(app);
 /**
 * Server
 **/
-app.listen(config.port, function(){
+http.listen(config.port, function(){
 	console.log('Application started on port ' + chalk.green.bold(config.port.toString()));
 });

@@ -5,7 +5,8 @@ body {
   font-family: $default-font;
 }
 .content-body {
-  margin-top: 50px;
+  margin: 50px 0 0 0;
+  padding: 0;
 }
 
 // Paragraph
@@ -13,6 +14,12 @@ h1 {
   margin: 0;
   padding: 0;
   font-size: $heading-font-size;
+  font-weight: normal;
+}
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: $sub-heading-font-size;
   font-weight: normal;
 }
 

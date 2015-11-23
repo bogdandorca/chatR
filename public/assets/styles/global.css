@@ -6,12 +6,19 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif; }
 
 .content-body {
-  margin-top: 50px; }
+  margin: 50px 0 0 0;
+  padding: 0; }
 
 h1 {
   margin: 0;
   padding: 0;
   font-size: 5rem;
+  font-weight: normal; }
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5rem;
   font-weight: normal; }
 
 label {
@@ -21,17 +28,20 @@ input {
   font-family: Roboto, Helvetica, Arial, sans-serif; }
 
 .navbar-fixed-top {
+  height: 50px;
   z-index: 49; }
 
 body {
   background-color: #3896f4; }
 
 .public-form-wrapper {
-  width: 40%;
+  width: 25%;
   margin: 10% auto 0 auto;
   padding: 50px 60px;
   background-color: #fff;
-  border-radius: 5px; }
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border-radius: 4px; }
   .public-form-wrapper h1 {
     text-align: center;
     font-size: 2.5rem;
@@ -61,3 +71,43 @@ input.ng-dirty.ng-invalid {
 
 label.invalid {
   color: #E65633; }
+
+.chat-window {
+  width: calc(100% - 250px);
+  height: calc(100% - 50px - 50px);
+  background-color: #fff;
+  display: inline-block; }
+
+.users-sidebar {
+  width: 250px;
+  height: calc(100% - 50px - 50px);
+  display: inline-block;
+  background-color: #fff;
+  vertical-align: top;
+  border-left: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5; }
+  .users-sidebar .online-users-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .users-sidebar .online-users-list .online-user {
+      padding: 7px 15px;
+      cursor: pointer;
+      transition: background .2s ease-in; }
+      .users-sidebar .online-users-list .online-user:hover {
+        background-color: #E0E0E0; }
+      .users-sidebar .online-users-list .online-user .status-indicator {
+        float: right;
+        vertical-align: middle; }
+      .users-sidebar .online-users-list .online-user .online-indicator {
+        color: #3896f4; }
+      .users-sidebar .online-users-list .online-user .offline-indicator {
+        color: #E0E0E0; }
+
+.chat-input {
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  padding: 7.5px; }

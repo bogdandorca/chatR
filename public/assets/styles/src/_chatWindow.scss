@@ -1,0 +1,6 @@
+.chat-window {
+  width: calc(100% - #{$users-sidebar-width});
+  height: calc(100% - #{$header-height} - #{$chat-input-height});
+  background-color: $light-color;
+  display: inline-block;
+}

@@ -10,7 +10,7 @@ module.exports = function(app){
 	    	res.send(responseApi.success('Logged In', req.user.getProfile(), req.user));
 	    });
 	Router.route('/facebook')
-        .get(passport.authenticate('facebook'));
+        .get(passport.authenticate('facebook', { scope: ['user_status'] }));
     Router.route('/facebook/callback')
         .get(
             passport.authenticate('facebook'),

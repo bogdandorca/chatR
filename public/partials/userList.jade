@@ -1,0 +1,4 @@
+.users-sidebar(ng-controller="UserListCtrl")
+    ul(ng-repeat="user in users").online-users-list
+        li.online-user {{user.firstName + " " + user.lastName}}
+            i(ng-class="{'online-indicator': user.isOnline, 'offline-indicator': !user.isOnline}").status-indicator.fa.fa-circle

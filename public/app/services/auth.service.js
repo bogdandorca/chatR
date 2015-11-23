@@ -1,4 +1,4 @@
-angular.module('app').factory('AuthService', function($http, $q){
+angular.module('app').factory('AuthService', function($http, $q, SocketService){
     return {
         user: null,
 
@@ -14,7 +14,7 @@ angular.module('app').factory('AuthService', function($http, $q){
         },
 
         get: function(){
-            return user;
+            return this.user;
         },
         set: function(user){
             this.user = user;
@@ -30,6 +30,7 @@ angular.module('app').factory('AuthService', function($http, $q){
                             var data = response.data;
                             if (data.success) {
                                 that.user = data.success.object;
+                                SocketService.init();
                             }
                             that.notifyObservers();
                             deferred.resolve();
@@ -53,6 +54,7 @@ angular.module('app').factory('AuthService', function($http, $q){
                     } else {
                         that.user = data.success.object;
                         deferred.resolve(data.success.message);
+                        SocketService.init();
                     }
                     // Notify the observers
                     that.notifyObservers();
@@ -69,6 +71,7 @@ angular.module('app').factory('AuthService', function($http, $q){
             $http.get('/auth/logout')
                 .then(function(){
                     // Reset user object
+                    SocketService.socket.emit('disconnectClient');
                     that.user = null;
                     deferred.resolve();
                 }, function(){
